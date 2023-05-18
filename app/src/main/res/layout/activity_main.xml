@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="파일 이름 : " />
+
+        <EditText
+            android:id="@+id/fileName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="fileName.txt" />
+        <Button
+            android:id="@+id/btnSaveData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"/>
+
+        <Button
+            android:id="@+id/btnupdategps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gps"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X : " />
+
+        <EditText
+            android:id="@+id/positionXView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Y : " />
+
+        <EditText
+            android:id="@+id/positionYView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="0dp">
+
+        <Button
+            android:id="@+id/plusX"
+            android:layout_width="187dp"
+            android:layout_height="312dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="#FF7012"
+            android:onClick="onChangePositionClicked"
+            android:text="+" />
+
+
+        <Button
+            android:id="@+id/minusX"
+            android:layout_width="204dp"
+            android:layout_height="290dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="#FF7012"
+            android:onClick="onChangePositionClicked"
+            android:text="-" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="0dp">
+
+        <Button
+            android:id="@+id/plusY"
+            android:layout_width="219dp"
+            android:layout_height="286dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="#FF7012"
+            android:onClick="onChangePositionClicked"
+            android:text="+" />
+
+
+        <Button
+            android:id="@+id/minusY"
+            android:layout_width="153dp"
+            android:layout_height="297dp"
+            android:backgroundTint="#FF7012"
+            android:onClick="onChangePositionClicked"
+            android:text="-" />
+    </LinearLayout>
+</LinearLayout>
