@@ -71,11 +71,7 @@ class MainActivity : AppCompatActivity() {
         override fun onReceive(context: Context, intent: Intent) {
             var success = intent.getBooleanExtra(WifiManager.EXTRA_RESULTS_UPDATED, false)
             Log.d("extra wifi check", success.toString())
-            if (success) {
-                wifipermitted = true
-            } else {
-                wifipermitted = false
-            }
+            wifipermitted = success
         }
     }
     //////////////////////////////////////////////////
@@ -206,10 +202,10 @@ class MainActivity : AppCompatActivity() {
         positionY = positionYView.text.toString().toDouble()
         Log.d("buttontest", (v.id == R.id.plusX).toString())
         when (v.id) {
-            R.id.plusX -> positionX = positionX + 6.0
-            R.id.minusX -> positionX = positionX - 6.0
-            R.id.plusY -> positionY = positionY + 6.0
-            R.id.minusY -> positionY = positionY - 6.0
+            R.id.plusX -> positionX += 6.0
+            R.id.minusX -> positionX -= 6.0
+            R.id.plusY -> positionY += 6.0
+            R.id.minusY -> positionY -= 6.0
         }
         Log.d("buttontest", (positionX).toString())
 
@@ -370,13 +366,21 @@ class MainActivity : AppCompatActivity() {
         var sdPath = ""
         val ext = Environment.getExternalStorageState()
         sdPath = if (ext == Environment.MEDIA_MOUNTED) {
-            Environment.getExternalStorageDirectory()
-                .absolutePath + "/wifidata/"
+            val dir = File(Environment.getExternalStorageDirectory(), "wifidata")
+            if (!dir.exists()) {
+                dir.mkdirs()
+            }
+            dir.absolutePath + "/"
         } else {
-            "$filesDir/wifidata/"
+            val dir = File(filesDir, "wifidata")
+            if (!dir.exists()) {
+                dir.mkdirs()
+            }
+            dir.absolutePath + "/"
         }
         return sdPath
     }
+
 
     private fun getgpsExternalPath(): String {
         var sdPath = ""
