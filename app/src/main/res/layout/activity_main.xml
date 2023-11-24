@@ -7,6 +7,7 @@
     android:paddingRight="5dp"
     android:paddingLeft="5dp">
 
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,10 +32,10 @@
             android:text="SAVE"/>
 
         <Button
-            android:id="@+id/btnupdategps"
+            android:id="@+id/btnRst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="gps"/>
+            android:text="RST"/>
 
     </LinearLayout>
 
@@ -84,9 +85,9 @@
 
         <Button
             android:id="@+id/plusX"
-            android:layout_width="187dp"
-            android:layout_height="312dp"
-            android:layout_marginRight="30dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="50dp"
             android:backgroundTint="#FF7012"
             android:onClick="onChangePositionClicked"
             android:text="+" />
@@ -94,9 +95,8 @@
 
         <Button
             android:id="@+id/minusX"
-            android:layout_width="204dp"
-            android:layout_height="290dp"
-            android:layout_marginRight="30dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
             android:backgroundTint="#FF7012"
             android:onClick="onChangePositionClicked"
             android:text="-" />
@@ -112,9 +112,9 @@
 
         <Button
             android:id="@+id/plusY"
-            android:layout_width="219dp"
-            android:layout_height="286dp"
-            android:layout_marginRight="30dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="50dp"
             android:backgroundTint="#FF7012"
             android:onClick="onChangePositionClicked"
             android:text="+" />
@@ -122,10 +122,16 @@
 
         <Button
             android:id="@+id/minusY"
-            android:layout_width="153dp"
-            android:layout_height="297dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
             android:backgroundTint="#FF7012"
             android:onClick="onChangePositionClicked"
             android:text="-" />
     </LinearLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="380dp">
+
+    </WebView>
 </LinearLayout>
